@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { VAMPIRE_GRAY, WHITE } from 'client/constants/style-variables';
+import { GRAY, WHITE } from 'client/constants/style-variables';
 
 const StyleWrapper = styled.div`
   .input-container {
@@ -15,7 +15,7 @@ const StyleWrapper = styled.div`
       margin: 0px;
       border: none;
       outline: none;
-      background-color: ${VAMPIRE_GRAY};
+      background-color: ${GRAY};
       padding: 0px;
     }
   }
