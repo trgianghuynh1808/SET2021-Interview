@@ -4,6 +4,17 @@
   "description": "React server side project - SET 2021",
   "main": "./dist/app.js",
   "license": "Eri",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "test": "npx jest",
     "build:prod": "npx webpack --env PRODUCTION",
@@ -52,8 +63,10 @@
     "eslint-plugin-react": "^7.29.3",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
     "jest": "^27.4.7",
     "jsdom": "^19.0.0",
+    "lint-staged": "^12.3.5",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "react-refresh": "^0.11.0",
