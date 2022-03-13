@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { generateKeyBoardClassName } from './utils';
+import { generateKeyBoardClassName, getLabelKeyBoard } from './utils';
 import StyleWrapper from './styles';
 
 interface IKeyboardProps {
@@ -13,6 +13,7 @@ function Keyboard(props: IKeyboardProps) {
   const { className, value, onClick } = props;
 
   const keyBoardClassName = generateKeyBoardClassName(value);
+  const labelKeyBoard = getLabelKeyBoard(value);
 
   return (
     <StyleWrapper>
@@ -21,7 +22,7 @@ function Keyboard(props: IKeyboardProps) {
         onClick={() => {
           onClick(value);
         }}>
-        {value}
+        {labelKeyBoard}
       </div>
     </StyleWrapper>
   );
