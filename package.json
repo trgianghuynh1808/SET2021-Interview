@@ -5,6 +5,7 @@
   "main": "./dist/app.js",
   "license": "Eri",
   "scripts": {
+    "test": "npx jest",
     "build:prod": "npx webpack --env PRODUCTION",
     "start:client": "npx webpack serve --config-name client --env HOT",
     "start:server": "npx concurrently \"npx webpack -w\" \"npx nodemon ./dist/app.js\""
@@ -27,6 +28,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "@types/copy-webpack-plugin": "^10.1.0",
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^17.0.8",
     "@types/react": "^17.0.38",
@@ -41,9 +43,11 @@
     "copy-webpack-plugin": "^10.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.7",
     "jsdom": "^19.0.0",
     "nodemon": "^2.0.15",
     "react-refresh": "^0.11.0",
+    "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
