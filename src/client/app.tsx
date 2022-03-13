@@ -1,18 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import { Routes, Route } from "react-router-dom";
+import HistoryPage from "./pages/HistoryPage";
+import HomePage from "./pages/HomePage";
+import routes from "./routes";
 
 function App(): JSX.Element {
   return (
-    <StyleWrapper>
-      <h1>Hello world</h1>
-    </StyleWrapper>
+    <Routes>
+      <Route path={routes.home.value} element={<HomePage />} />
+      <Route path={routes.history.value} element={<HistoryPage />} />
+    </Routes>
   );
 }
-
-const StyleWrapper = styled.div`
-  h1 {
-    color: red;
-  }
-`;
 
 export default App;

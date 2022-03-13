@@ -3,6 +3,7 @@ import { ServerStyleSheet } from "styled-components";
 import App from "client/app";
 import { renderToString } from "react-dom/server";
 import fs from "fs";
+import { StaticRouter } from "react-router-dom/server";
 import { HTML_TEMPLATE_PATH } from "../configuration";
 
 export async function renderReactAsync(url: string) {
@@ -12,7 +13,11 @@ export async function renderReactAsync(url: string) {
     encoding: "utf-8",
   });
 
-  const WrappedApp = <App />;
+  const WrappedApp = (
+    <StaticRouter location={url}>
+      <App />
+    </StaticRouter>
+  );
   const [reactContent, styleTags] = renderToStringWithStyles(WrappedApp);
 
   const renderedHtml = buildHtml(staticHtmlContent, reactContent, styleTags);

@@ -1,0 +1,18 @@
+import React from "react";
+import styled from "styled-components";
+
+const StyleWrapper = styled.div`
+  h1 {
+    color: red;
+  }
+`;
+
+function HomePage(): JSX.Element {
+  return (
+    <StyleWrapper>
+      <h1>Hello world</h1>
+    </StyleWrapper>
+  );
+}
+
+export default HomePage;
