@@ -1,4 +1,5 @@
 import React from "react";
+import { ServerStyleSheet } from "styled-components";
 import App from "client/app";
 import { renderToString } from "react-dom/server";
 import fs from "fs";
@@ -12,22 +13,33 @@ export async function renderReactAsync(url: string) {
   });
 
   const WrappedApp = <App />;
-  const reactHtmlContent = renderToString(WrappedApp);
+  const [reactContent, styleTags] = renderToStringWithStyles(WrappedApp);
 
-  const renderedHtml = buildHtml(staticHtmlContent, reactHtmlContent);
+  const renderedHtml = buildHtml(staticHtmlContent, reactContent, styleTags);
 
   return renderedHtml;
 }
 
-function buildHtml(templateHtml: string, reactHtml: string) {
+function buildHtml(templateHtml: string, reactHtml: string, styleTags: string) {
   const pattern = /(?<head><head>)|(?<root><div\sid="root">)/g;
 
   return templateHtml.replace(pattern, (match, ...params: any[]) => {
     const groups = params.pop();
 
-    if (groups.head) return groups.head;
+    if (groups.head) return groups.head + styleTags;
     if (groups.root) return groups.root + reactHtml;
 
     return match;
   });
+}
+
+function renderToStringWithStyles(component: JSX.Element) {
+  const sheet = new ServerStyleSheet();
+  try {
+    const reactHtml = renderToString(sheet.collectStyles(component));
+    const styleTags = sheet.getStyleTags();
+    return [reactHtml, styleTags];
+  } finally {
+    sheet.seal();
+  }
 }

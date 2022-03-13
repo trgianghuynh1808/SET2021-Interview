@@ -97,6 +97,8 @@ function createServerConfig(env: Env): Configuration {
 }
 
 function createClientConfig(env: Env): Configuration {
+  const CLIENT_PORT = 9000;
+
   const babelConfig = {
     presets: [
       "@babel/preset-env",
@@ -172,7 +174,7 @@ function createClientConfig(env: Env): Configuration {
 
     devServer: {
       hot: env.hot,
-      port: 9000,
+      port: CLIENT_PORT,
       historyApiFallback: true,
     },
   };
