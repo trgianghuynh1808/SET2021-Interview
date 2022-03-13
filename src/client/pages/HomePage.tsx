@@ -6,6 +6,14 @@ const StyleWrapper = styled.div`
   h1 {
     color: red;
   }
+
+  .main-content {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 function HomePage(): JSX.Element {
@@ -14,7 +22,9 @@ function HomePage(): JSX.Element {
       <div>
         <h1>Hello world</h1>
 
-        <Calculator />
+        <div className="main-content">
+          <Calculator />
+        </div>
       </div>
     </StyleWrapper>
   );

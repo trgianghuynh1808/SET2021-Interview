@@ -9,4 +9,4 @@ export const BLACK = 'black';
 export const ORANGE = '#fd9e2b';
 export const LIGHT_GREY = '#857d7c';
 
-export const BORDER_COLOR = '#787475';
+export const BORDER_COLOR = '#625451';

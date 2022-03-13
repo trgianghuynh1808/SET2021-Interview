@@ -8,7 +8,7 @@ const StyleWrapper = styled.div`
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    border: 1px solid ${BORDER_COLOR};
+    outline: 2px solid ${BORDER_COLOR};
   }
 `;
 

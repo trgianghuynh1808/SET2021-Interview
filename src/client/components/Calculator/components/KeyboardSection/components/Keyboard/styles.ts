@@ -1,4 +1,4 @@
-import { BLACK, GREY, LIGHT_GREY, ORANGE, RED, WHITE } from 'client/constants/style-variables';
+import { BORDER_COLOR, GREY, LIGHT_GREY, ORANGE, WHITE } from 'client/constants/style-variables';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
@@ -13,7 +13,7 @@ const StyleWrapper = styled.div`
     align-items: center;
     color: ${WHITE};
     font-weight: bold;
-    outline: 1px solid ${BLACK};
+    outline: 2px solid ${BORDER_COLOR};
 
     &:hover {
       cursor: pointer;
