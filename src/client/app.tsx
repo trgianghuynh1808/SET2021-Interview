@@ -1,18 +1,21 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+
+import HistoryPage from './pages/HistoryPage';
+import HomePage from './pages/HomePage';
+import routes from './routes';
+import { rootStore } from './stores';
 
 function App(): JSX.Element {
   return (
-    <StyleWrapper>
-      <h1>Hello world</h1>
-    </StyleWrapper>
+    <Provider {...rootStore}>
+      <Routes>
+        <Route path={routes.home.value} element={<HomePage />} />
+        <Route path={routes.history.value} element={<HistoryPage />} />
+      </Routes>
+    </Provider>
   );
 }
-
-const StyleWrapper = styled.div`
-  h1 {
-    color: red;
-  }
-`;
 
 export default App;
