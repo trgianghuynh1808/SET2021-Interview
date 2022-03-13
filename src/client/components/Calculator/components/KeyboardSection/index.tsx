@@ -5,12 +5,13 @@ import {
   KEY_MAPS,
   OPPOSITE_KEY_MAP,
   PERCENT_KEY_MAP
-} from 'client/constants/common';
+} from 'client/constants/keymap';
 import React, { useContext } from 'react';
 import { CalculatorContext } from 'client/context/calculator';
 
 import Keyboard from './components/Keyboard';
 import StyleWrapper from './styles';
+import { handleSaveData } from './utils';
 
 function KeyboardSection() {
   const { inputValue, setInputValue } = useContext(CalculatorContext);
@@ -42,6 +43,11 @@ function KeyboardSection() {
         formatInputValue = formatInputValue.replaceAll(OPPOSITE_KEY_MAP, '*(-1)');
 
         const result = eval(`${formatInputValue}`);
+
+        const savedDate = Date.parse(new Date().toString());
+        const savedData = `${currentInputValue}=${result}_${savedDate}`;
+
+        handleSaveData(savedData);
 
         return result;
       } catch (error) {

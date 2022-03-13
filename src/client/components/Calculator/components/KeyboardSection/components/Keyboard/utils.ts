@@ -5,7 +5,7 @@ import {
   MUL_KEY_MAP,
   OPERATOR_KEY_MAPS,
   SPECIAL_KEY_MAPS
-} from 'client/constants/common';
+} from 'client/constants/keymap';
 
 export function generateKeyBoardClassName(value: string | number): string {
   if (SPECIAL_KEY_MAPS.includes(value as string)) {
