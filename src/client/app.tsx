@@ -1,11 +1,11 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Provider } from "mobx-react";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 
-import HistoryPage from "./pages/HistoryPage";
-import HomePage from "./pages/HomePage";
-import routes from "./routes";
-import { rootStore } from "./stores";
+import HistoryPage from './pages/HistoryPage';
+import HomePage from './pages/HomePage';
+import routes from './routes';
+import { rootStore } from './stores';
 
 function App(): JSX.Element {
   return (
