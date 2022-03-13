@@ -8,8 +8,6 @@ const StyleWrapper = styled.div`
 `;
 
 function HomePage(): JSX.Element {
-  console.log('test precomit');
-
   return (
     <StyleWrapper>
       <div>
