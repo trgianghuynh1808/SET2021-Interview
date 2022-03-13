@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
   h1 {
@@ -8,6 +8,8 @@ const StyleWrapper = styled.div`
 `;
 
 function HomePage(): JSX.Element {
+  console.log('test precomit');
+
   return (
     <StyleWrapper>
       <div>

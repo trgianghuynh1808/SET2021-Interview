@@ -10,8 +10,8 @@
     }
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix",
+    "src/*.{ts,tsx}": [
+      "yarn lint:fix",
       "git add"
     ]
   },
