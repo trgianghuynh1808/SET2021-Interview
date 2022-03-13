@@ -17,3 +17,29 @@
 
 - Production:
   3a. run cmd `yarn build:prod`
+
+## How to run unit test
+
+1. Go to root folder
+2. Run with modes:
+
+- Develope:
+
+  2a. Run cmd `yarn test:dev`
+
+- Coverage:
+
+  2a. Run cmd `yarn test:coverage`
+
+## How to run Eslint
+
+1. Go to root folder
+2. Run with modes:
+
+- Eslint check:
+
+  2a. Run cmd `yarn lint`
+
+- Eslint fix:
+
+  2a. Run cmd `yarn lint:fix`
