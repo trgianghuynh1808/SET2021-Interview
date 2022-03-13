@@ -1,3 +1,4 @@
+import { useStores } from "client/hooks/useStores";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,9 +9,15 @@ const StyleWrapper = styled.div`
 `;
 
 function HistoryPage(): JSX.Element {
+  const { testStore } = useStores();
+
+  console.log({ status: testStore.status });
+
   return (
     <StyleWrapper>
-      <h1>History page</h1>
+      <div>
+        <h1>History page</h1>
+      </div>
     </StyleWrapper>
   );
 }

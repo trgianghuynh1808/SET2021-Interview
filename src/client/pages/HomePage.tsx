@@ -10,7 +10,9 @@ const StyleWrapper = styled.div`
 function HomePage(): JSX.Element {
   return (
     <StyleWrapper>
-      <h1>Hello world</h1>
+      <div>
+        <h1>Hello world</h1>
+      </div>
     </StyleWrapper>
   );
 }
