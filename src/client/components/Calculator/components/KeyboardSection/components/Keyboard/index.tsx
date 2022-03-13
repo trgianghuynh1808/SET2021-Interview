@@ -1,7 +1,7 @@
 import React from 'react';
 
-import StyleWrapper from './styles';
 import { generateKeyBoardClassName } from './utils';
+import StyleWrapper from './styles';
 
 interface IKeyboardProps {
   className?: string;
