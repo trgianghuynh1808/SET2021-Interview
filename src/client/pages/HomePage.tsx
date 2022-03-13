@@ -1,3 +1,4 @@
+import Calculator from 'client/components/Calculator';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -12,6 +13,8 @@ function HomePage(): JSX.Element {
     <StyleWrapper>
       <div>
         <h1>Hello world</h1>
+
+        <Calculator />
       </div>
     </StyleWrapper>
   );
