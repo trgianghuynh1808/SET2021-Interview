@@ -10,3 +10,4 @@ export const ORANGE = '#fd9e2b';
 export const LIGHT_GREY = '#857d7c';
 
 export const BORDER_COLOR = '#625451';
+export const TABLE_COLOR = '#dddddd';
