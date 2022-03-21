@@ -30,10 +30,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # cd to GiangHuynh src
-      - name: Go to GiangHuynh's src
-        run:
-
       # Setup Nodejs
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
