@@ -15,6 +15,7 @@ on:
 #
 env:
   IMAGE_NAME: 'trgianghuynh1808/set2021-interview'
+  CONTAINER_NAME: 'set2021-interview'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -66,8 +67,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          envs: IMAGE_NAME
+          envs: CONTAINER_NAME, IMAGE_NAME
           script: |
-            docker stop $(echo $IMAGE_NAME)
-            docker rm $(echo $IMAGE_NAME)
-            docker run --name $(echo $IMAGE_NAME) -p 9000:9000 -d $(echo $IMAGE_NAME)
+            docker stop $(echo $CONTAINER_NAME)
+            docker rm $(echo $CONTAINER_NAME)
+            docker run --name $(echo $CONTAINER_NAME) -p 9000:9000 -d $(echo $IMAGE_NAME)
