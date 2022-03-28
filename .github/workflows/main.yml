@@ -67,4 +67,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           envs: IMAGE_NAME
-          script: docker run -p 9000:3000 -d $(echo $IMAGE_NAME)
+          script: |
+            docker stop $(echo $IMAGE_NAME)
+            docker rm $(echo $IMAGE_NAME)
+            docker run --name $(echo $IMAGE_NAME) -p 9000:9000 -d $(echo $IMAGE_NAME)
